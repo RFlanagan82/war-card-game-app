@@ -25,6 +25,16 @@ export default class Deck {
     return this.cards.length;
   }
 
+  //take the top element off of our array and returns it back to us.
+  pop() {
+    return this.cards.shift()
+  }
+
+  //adds a card to the bottom of the deck
+  push(card) {
+    this.cards.push(card)
+  }
+
   //loop through all the cards and swap with another card
   shuffle() {
     for (let i = this.numberOfCards - 1; i > 0; i--) {
@@ -41,7 +51,20 @@ class Card {
     this.suit = suit;
     this.value = value;
   }
+
+  get color() {
+      return this.suit === '♣' || this.suit === '♠' ? 'black' : 'red'
+  }
+
+  getHtml(){
+    const cardDiv = document.createElement('div')
+    cardDiv.innerText = this.suit
+    cardDiv.classList.add('card', this.color)
+    cardDiv.dataset.value = `${this.value} ${this.suit}`
+    return cardDiv
+  }
 }
+
 
 // this will create a brand new deck of 52 cards - one for each suit and value combination
 //use .flatMap funtion to put all the cards into one array of all 52 cards, not 4 arrays of 13 cards based on their suits.
