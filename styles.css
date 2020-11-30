@@ -1,44 +1,85 @@
-*, *::after, *::before {
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 6rem);
-    grid-template-rows: 10rem 2rem 10rem;
-    gap: .5rem;
-    cursor: pointer;
-    justify-content: center;
-    padding-top: 1rem;
+  background-image: URL("https://www.free-freecell-solitaire.com/solitaire/images/backgrounds/1920x1200/green_felt.jpg");
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 6rem);
+  grid-template-rows: 10rem 2rem 10rem;
+  gap: 0.5rem;
+  cursor: pointer;
+  justify-content: center;
+  padding-top: 5rem;
 }
 
 .deck {
-    height: 100%;
-    width: 100%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    border-radius: .5rem;
-    color: white;
-    user-select: none;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 0.5rem;
+  color: white;
+  user-select: none;
 }
 
 .computer-deck {
-    background-color: red;
+  background-color: red;
 }
 
 .player-deck {
-    background-color: gold;
-    color: black;
+  background-color: gold;
+  color: black;
 }
 
 .text {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.card {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+.card.red {
+    color: red;
+}
+
+.card.black {
+    color: black;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  content: attr(data-value);
+  font-size: 1rem;
+}
+
+.card::before {
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.card::after {
+  bottom: 0.5rem;
+  right: 0.5rem;
+  transform: rotate(180deg)
 }
