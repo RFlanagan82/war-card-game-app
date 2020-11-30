@@ -12,6 +12,9 @@ First one who loses all of their cards loses the game.
 ## Description
 This is a basic Javascript app with CSS styling.
 
+## Access
+Click [here to access](https://rflanagan82.github.io/war-card-game-app/).
+
 ## Badge
 ![](https://img.shields.io/badge/RFlanagan82-Do%20it%20for%20the%20users-green)
 ## Contact
